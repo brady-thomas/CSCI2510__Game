@@ -1,0 +1,79 @@
+<html>
+    <head> 
+        <title>RougeLike</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Sixtyfour&display=swap" rel="stylesheet">
+        
+        <style>
+            *{
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canv">
+        </canvas>
+
+        <script src="../engine/Vector2.js"></script>
+        <script src="../engine/input.js"></script>
+        <script src="../engine/Engine.js"></script>
+        <script src="../engine/Scene.js"></script>
+        <script src="../engine/GameObjects.js"></script>
+        <script src="../engine/Component.js"></script>
+        <script src="../engine/Time.js"></script>
+        <script src="../engine/SceneManager.js"></script>
+        <script src="../engine/Collisions.js"></script>
+
+        <script src="../engine/components/Transform.js"></script>
+        <script src="../engine/components/Polygon.js"></script>
+        <script src="../engine/components/TextLabel.js"></script>
+        <script src="../engine/components/Collider.js"></script>
+        <script src="../engine/components/Camera.js"></script>
+        <script src="../engine/components/RigidBody.js"></script>
+        <script src="../engine/components/MultiLineTextLabel.js"></script>
+
+
+
+        
+
+        <script src="../RougeLike/Components.js/StartButtonController.js"></script>
+
+
+
+
+        <script src="../RougeLike/GameObjects/StartTextGameObject.js"></script>
+        <script src="../RougeLike/GameObjects/StartButton.js"></script>
+        <script src="../RougeLike/GameObjects/Ham.js"></script> 
+        <script src="../RougeLike/GameObjects/Coin.js"></script>
+        <script src="../RougeLike/GameObjects/MoneyTextLabel.js"></script>
+        
+
+
+        <script src="../RougeLike/Scenes/StartScene.js"></script>
+        <script src="../RougeLike/Scenes/PickOne.js"></script>
+
+
+
+
+        
+        
+
+        <script src="../RougeLike/Assets.js"></script>
+        <script src="../RougeLike/Globals.js"></script>
+        <script src="../RougeLike/Settings.js"></script>
+
+
+
+
+        <script>
+
+            Engine.start(StartScene, Settings)
+
+
+        </script>
+
+    </body>
+</html> 

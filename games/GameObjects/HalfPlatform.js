@@ -1,0 +1,17 @@
+class HalfPlatform extends GameObjects{
+    constructor(){
+        super("HalfPlatform", ["HalfPlatform"], "platforms")
+        this.addComponent(new Polygon(), {fillStyle: "darkblue", points: Assets.platform})
+        this.transform.scale = new Vector2(.5, 1)
+
+        this.addComponent(new PlatformController())
+
+        this.addComponent(new Collider())
+
+
+    }
+
+
+
+
+}
