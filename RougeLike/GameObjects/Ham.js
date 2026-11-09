@@ -3,10 +3,10 @@ class Ham extends GameObjects{
         super("Ham", ["Ham"], "toppings")
 
         this.addComponent(new Polygon(), {fillStyle: "hotpink", points:[
-            new Vector2(-11,-31),
-            new Vector2(-11,11),
-            new Vector2(31,11),
-            new Vector2(31,-31)
+            new Vector2(-21,-26),
+            new Vector2(-21,16),
+            new Vector2(21,16),
+            new Vector2(21,-26)
 
 
 

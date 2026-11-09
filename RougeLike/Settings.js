@@ -1,4 +1,4 @@
 class Settings{
-    static layers = ["background", "buttons", "toppings", "coins", "UI"]
+    static layers = ["background", "buttons", "toppings", "coins", "picks", "UI"]
 
 }

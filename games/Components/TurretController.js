@@ -22,6 +22,7 @@ class TurretController extends Component {
 
 
 
+        
         this.timeSinceLastLaser += 1
         if (this.timeSinceLastLaser > 45) {
             this.timeSinceLastLaser = 0

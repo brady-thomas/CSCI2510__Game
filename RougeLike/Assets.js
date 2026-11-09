@@ -27,14 +27,33 @@ class Assets{
 
 
     static ham = [
-        new Vector2(-10,-10),
-        new Vector2(-10,10),
-        new Vector2(10,10),
-        new Vector2(10,-30),
-        new Vector2(30,-30),
-        new Vector2(30,-10),
-        new Vector2(10,-10),
+        new Vector2(-20,-5),
+        new Vector2(-20,15),
+        new Vector2(0,15),
+        new Vector2(0,-25),
+        new Vector2(20,-25),
+        new Vector2(20,-5),
+        new Vector2(0,-5),
         
+
+    ]
+
+
+    static tomato = [
+        new Vector2(-10,-20),
+        new Vector2(-10, -10),
+        new Vector2(-20, -10),  
+        new Vector2(-20,10),
+        new Vector2(-10,10),
+        new Vector2(-10,20),
+        new Vector2(10,20),
+        new Vector2(10,10),
+        new Vector2(20,10),
+        new Vector2(20,-10),
+        new Vector2(10,-10),
+        new Vector2(10,-20)
+
+
 
     ]
 
