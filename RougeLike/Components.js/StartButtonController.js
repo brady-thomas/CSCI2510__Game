@@ -12,7 +12,20 @@ class StartButtonController extends Component{
         textLabel.transform.scale = new Vector2(1.2, 1.2)
 
         if (Input.mouseButtonsDown.includes(0)) {
-            SceneManager.loadScene(PickOne)
+            
+            let i = 0
+            while (i < 3) {
+                let random = Math.floor(Math.random() * Globals.starterToppings.length)
+                Globals.playerItems.push(Globals.starterToppingsString[random])
+
+                i++
+            }
+
+            SceneManager.loadScene(GastaOne)
+
+
+
+
         }
 
 

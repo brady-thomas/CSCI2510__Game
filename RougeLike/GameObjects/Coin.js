@@ -10,8 +10,10 @@ class Coin extends GameObjects {
         ]})
 
 
-        this.addComponent(new Polygon(), {fillStyle: "gold", points:Assets.square})
         
+
+        this.addComponent(new Polygon(), {fillStyle: "gold", points:Assets.square})
+        this.addComponent(new TextLabel(), {fillStyle: "orange", font: "24px VT323", textAlign: "center", textBaseline: "middle", text: "¢"})
 
         this.transform.scale = new Vector2(1, 1)
 

@@ -12,6 +12,9 @@ class PickOne extends Scene{
         this.instantiate(new PickGameObject(), new Vector2(400,300))
 
 
+        //this.instantiate(new Descriptions(), new Vector2(0,0))
+
+
 
 
         this.instantiate(new Coin(), new Vector2(-700,-400))

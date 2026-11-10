@@ -7,6 +7,8 @@ class TextLabel extends Component{
 
     textAlign = "left"
 
+    textBaseline = "alphabetic"
+
     draw(ctx) {
         
 
@@ -21,6 +23,7 @@ class TextLabel extends Component{
         ctx.fillStyle = this.fillStyle
         ctx.font = this.font
         ctx.textAlign = this.textAlign
+        ctx.textBaseline = this.textBaseline
 
         ctx.fillText(this.text, 0,0)
 

@@ -1,4 +1,4 @@
-class AmericanCheese extends GameObjects{
+class Cheese extends GameObjects{
     constructor(){
         super("AmericanCheese", ["AmericanCheese"], "toppings")
 

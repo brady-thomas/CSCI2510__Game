@@ -27,7 +27,7 @@ class MultiLineTextLabel extends Component{
             if(ctx.measureText(possibleLine).width > this.maxWidth){
                 ctx.fillText(safeLine, 0, y)
                 y += fontHeight
-                safeLine = word + ""
+                safeLine = word + " "
             }
             else{
                 safeLine = possibleLine
