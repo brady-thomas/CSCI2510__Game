@@ -21,8 +21,13 @@ class ContinueButtonController extends Component{
 
         if (Input.mouseButtonsDown.includes(0)) {
             
+            Globals.day++
+
+            
 
             SceneManager.loadScene(PickOne)
+
+            
 
 
 

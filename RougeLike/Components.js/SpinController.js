@@ -9,7 +9,7 @@ class SpinController extends Component{
         //this.spinGO = []
 
         //console.log(this.slotFrames)
-        console.log(Globals.playerItems)
+        //console.log(Globals.playerItems)
 
 
     }
@@ -24,8 +24,8 @@ class SpinController extends Component{
 
             this.slot = this.slotFrames[Math.floor(Math.random() * this.slotFrames.length)]
                 
-            this.randomNum = Math.floor(Math.random() * Globals.starterToppings.length)
-            this.randomSpin = instantiate(Globals.starterToppings[this.randomNum], this.slot.transform.position.clone())
+            this.randomNum = Math.floor(Math.random() * Globals.currentToppings.length)
+            this.randomSpin = instantiate(Globals.currentToppings[this.randomNum], this.slot.transform.position.clone())
             
             
         }
@@ -48,12 +48,13 @@ class SpinController extends Component{
                 
             this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
             
-            console.log(this.item)
+            //console.log(this.item)
             
-
+            Globals.spinItems.push(this.item)
+                    
             this.itemSpun = instantiate(Globals.toppingsInstantiate[this.item](), this.transform.position.clone())
 
-            console.log(this.itemSpun.transform.position)
+            //console.log(this.itemSpun.transform.position)
 
             
         

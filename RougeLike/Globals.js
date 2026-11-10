@@ -1,14 +1,21 @@
 class Globals{
 
+    static week = 0
+
+    static day = 0
+
 
     static money = 100
 
-    static moneyLabel = "  = " + this.money
+    
 
     static playerItems = ["Empty", "Empty", "Empty", "Empty", "Empty",
                         "Empty", "Empty", "Empty", "Empty", "Empty",
                         "Empty", "Empty", "Empty", "Empty", "Empty",
                         "Empty", "Empty", "Empty", "Empty", "Empty", ]
+
+
+    static inventoryDict = {}
 
 
 
@@ -18,10 +25,16 @@ class Globals{
 
     static choiceOnScreen = []
 
-    static starterToppings = [new Turkey(), new Lettuce(), new Tomato(), new Ham(), new Cheese()]
+    static currentToppings = [new Turkey(), new Lettuce(), new Tomato(), new Ham(), new Cheese()]
 
 
-    static starterToppingsString = ["Turkey", "Lettuce", "Tomato", "Ham", "Cheese"]
+    static currentToppingsString = ["Turkey", "Lettuce", "Tomato", "Ham", "Cheese"]
+
+
+    static unCommonToppings = [new Bacon(), new Ranch(), new Mustard(), new Salami()]
+
+    static unCommonToppingsString = ["Bacon", "Ranch", "Mustard", "Salami"]
+
 
 
     static spinItems = []
@@ -33,14 +46,19 @@ class Globals{
     "Lettuce": () => new Lettuce(),
     "Tomato":  () => new Tomato(),
     "Ham":     () => new Ham(),
-    "Cheese":  () => new Cheese()
+    "Cheese":  () => new Cheese(),
+    "Bacon":   () => new Bacon(),
+    "Ranch":   () => new Ranch(),
+    "Mustard": () => new Mustard(),
+    "Salami":  () => new Salami()
+    
 }
 
     
 
-    static starterToppingCost = [10, 10, 10, 10, 10]
+    static currentToppingsCost = {"Turkey": 10, "Lettuce": 10, "Tomato": 10, "Ham": 10, "Cheese": 10}
 
-    static starterToppingDescription = ["Turkey:¢10. ¢5 per spin. Turkey Bacon Ranch: If adjacent to bacon AND ranch, gain ¢55.",
+    static currentToppingsDescription = ["Turkey:¢10. ¢5 per spin. Turkey Bacon Ranch: If adjacent to bacon AND ranch, gain ¢55.",
          "Lettuce:¢10. ¢5 per spin.",
          "Tomato: ¢10. ¢5 per spin. BLT: If adjacent to bacon AND lettuce, gain ¢35.",
           "Ham: ¢10. ¢5 per spin. Porky Pig: + ¢15 per adjacent pork item",

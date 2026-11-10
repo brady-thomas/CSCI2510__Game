@@ -14,9 +14,9 @@ class StartButtonController extends Component{
         if (Input.mouseButtonsDown.includes(0)) {
             
             let i = 0
-            while (i < 3) {
-                let random = Math.floor(Math.random() * Globals.starterToppings.length)
-                Globals.playerItems.push(Globals.starterToppingsString[random])
+            while (i < 2) {
+                let random = Math.floor(Math.random() * Globals.currentToppings.length)
+                Globals.playerItems.push(Globals.currentToppingsString[random])
 
                 i++
             }
@@ -29,7 +29,7 @@ class StartButtonController extends Component{
         }
 
 
-        //console.log("Mouse")
+        //console.log("Mouse") 
     }
 
 

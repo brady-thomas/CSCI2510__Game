@@ -30,8 +30,10 @@ class SlotScene extends Scene{
         this.instantiate(new SlotFrame(), new Vector2(300,250))
         
 
+        this.instantiate(new CoinControllerGameObject(), new Vector2(500,0))
 
-
+        this.instantiate(new Coin(), new Vector2(-700,-400))
+        this.instantiate(new MoneyTextLabel(), new Vector2(75, 30))
 
     }
 }

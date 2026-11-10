@@ -12,5 +12,7 @@ class Lettuce extends GameObjects {
         this.addComponent(new Polygon(), {fillStyle: "lightgreen", points:Assets.ham})
 
         this.transform.scale = new Vector2(2.5,2)
+
+        this.addComponent(new ToppingController())
     }
 }

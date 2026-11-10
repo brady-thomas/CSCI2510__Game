@@ -57,4 +57,15 @@ class Assets{
 
     ]
 
+    static sauce = [
+        new Vector2(-20,-20),
+        new Vector2(-10,-20),
+        new Vector2(-10,-30),
+        new Vector2(10,-30),
+        new Vector2(10,-20),
+        new Vector2(20,-20),
+        new Vector2(20,20),
+        new Vector2(-20,20)
+    ]
+
 }

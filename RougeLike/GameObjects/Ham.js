@@ -18,6 +18,7 @@ class Ham extends GameObjects{
         
 
         this.transform.scale = new Vector2(2.5,2)
+        this.addComponent(new ToppingController())
 
 
         
