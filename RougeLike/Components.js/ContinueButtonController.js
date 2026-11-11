@@ -27,7 +27,12 @@ class ContinueButtonController extends Component{
                 topping.destroy()
             }
 
-            SceneManager.loadScene(PickOne)
+            if (Globals.day % 7 == 0) {
+                SceneManager.loadScene(Globals.gastaLetters[Globals.week + 1])
+            } 
+            else {
+                SceneManager.loadScene(PickOne)
+            }
 
             
 

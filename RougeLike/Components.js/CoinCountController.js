@@ -98,21 +98,22 @@ class CoinCountController extends Component{
                     }
 
                     if (item == "Ham"){
-                        this.coinCount += 5
+                        this.coinCount += 0
                         for (let adj of adjacentItems){
-                            if (adj == "Ham" || adj == "Bacon"){
-                                this.coinCount += 15
+                            if (adj == "Ham" || adj == "Bacon" || adj == "Salami"){
+                                this.coinCount += 10
                             }
                         }
                     }
 
                     if (item == "Cheese"){
+                        this.coinCount += 0
                         for (let adj of adjacentItems){
                             if (adj != "Empty"){
                                 this.coinCount += 5
                             }
                         }
-                        this.coinCount += 5
+                        
 
 
                     }

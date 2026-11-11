@@ -3,15 +3,22 @@ class PickController extends Component{
     start(){
 
         const randChoice = Math.floor(Math.random() * Globals.currentToppings.length)
-
-        this.choice = Globals.currentToppings[randChoice]
-        this.choiceString = Globals.currentToppingsString[randChoice]
-        this.choiceDescription = Globals.currentToppingsDescription[randChoice]
+        if (Globals.day != 1 && Math.random() < 0.5){
+            const uncommonChoice = Math.floor(Math.random() * Globals.unCommonToppings.length)
+            this.choice = Globals.unCommonToppings[uncommonChoice]
+            this.choiceString = Globals.unCommonToppingsString[uncommonChoice]
+            this.choiceDescription = "Uncommon: " + Globals.descriptionsDict[this.choiceString]
+        }
+        else{
+            this.choice = Globals.currentToppings[randChoice]
+            this.choiceString = Globals.currentToppingsString[randChoice]
+            this.choiceDescription = Globals.descriptionsDict[this.choiceString]
+        }
 
         this.choiceDouble = false
         this.choiceSelected = false
 
-        console.log(Globals.day)
+        //console.log(Globals.day)
 
         if (!Globals.choiceOnScreen.includes(this.choiceString)){
             Globals.choiceOnScreen.push(this.choiceString)
@@ -24,14 +31,14 @@ class PickController extends Component{
 
         }
 
-        console.log(Globals.choiceOnScreen)
+        //console.log(Globals.choiceOnScreen)
 
 
         while (this.choiceDouble){
             const newRandom = Math.floor(Math.random() * Globals.currentToppings.length)
             this.choiceString = Globals.currentToppingsString[newRandom]
             this.choice = Globals.toppingsFactory[this.choiceString]()
-            this.choiceDescription = Globals.currentToppingsDescription[newRandom]
+            this.choiceDescription = Globals.descriptionsDict[this.choiceString]
             if (!Globals.choiceOnScreen.includes(this.choiceString)){
                 Globals.choiceOnScreen.push(this.choiceString)
                 this.choiceDouble = false
@@ -78,7 +85,13 @@ class PickController extends Component{
         if (this.choiceString == "Tomato"){
             this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(2, 2)
         }
-
+        if (this.choiceString == "Bacon"){
+            this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(2.5, 1.2)
+        }
+        if (this.choiceString == "Ranch" || this.choiceString == "Mustard" || this.choiceString == "Salami"){
+            this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(1.5, 2)
+        }
+       
 
 
 
@@ -121,6 +134,8 @@ class PickController extends Component{
             this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(3.5, 3.5)
         }
 
+        
+
 
         if (Input.mouseButtonsDownThisFrame.includes(0)){
 
@@ -131,6 +146,13 @@ class PickController extends Component{
             }
             if (this.choiceString == "Tomato"){
                 this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(2, 2)
+            }
+
+            if (this.choiceString == "Bacon"){
+                this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(3, 2.8)
+            }
+            if (this.choiceString == "Ranch" || this.choiceString == "Mustard" || this.choiceString == "Salami"){
+                this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(1.8, 2.3)
             }
 
             

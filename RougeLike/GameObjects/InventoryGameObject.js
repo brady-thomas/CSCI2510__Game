@@ -1,6 +1,6 @@
 class InventoryGameObject extends GameObjects{
     constructor(){
-        super("Inventory", ["Inventory"], "UI")
+        super("Inventory", ["Inventory"], "labels")
 
         this.addComponent(new InventoryController())
 
