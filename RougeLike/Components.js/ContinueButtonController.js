@@ -23,7 +23,9 @@ class ContinueButtonController extends Component{
             
             Globals.day++
 
-            
+            for (let topping of GameObjects.findGameObjectsByType(ToppingController)){
+                topping.destroy()
+            }
 
             SceneManager.loadScene(PickOne)
 

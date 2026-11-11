@@ -13,6 +13,9 @@ class Bacon extends GameObjects{
         ]})
 
 
+        this.addComponent(new ToppingController())
+        
+
         this.addComponent(new Polygon(), {fillStyle: "indianred", points:Assets.ham})
         this.transform.scale = new Vector2(2.5, 1.2)
     }

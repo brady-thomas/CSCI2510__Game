@@ -40,7 +40,7 @@ class Globals{
     static spinItems = []
 
 
-    static toppingsInstantiate = {
+    static toppingsFactory = {
     "Empty":   () => new Empty(),
     "Turkey":  () => new Turkey(),
     "Lettuce": () => new Lettuce(),
@@ -60,9 +60,9 @@ class Globals{
 
     static currentToppingsDescription = ["Turkey:¢10. ¢5 per spin. Turkey Bacon Ranch: If adjacent to bacon AND ranch, gain ¢55.",
          "Lettuce:¢10. ¢5 per spin.",
-         "Tomato: ¢10. ¢5 per spin. BLT: If adjacent to bacon AND lettuce, gain ¢35.",
-          "Ham: ¢10. ¢5 per spin. Porky Pig: + ¢15 per adjacent pork item",
-           "Cheese: ¢10. Cheese makes everything better: +¢5 per adjacent item."]
+         "Tomato:¢10.   ¢5 per spin. BLT: If adjacent to bacon AND lettuce, gain ¢35.",
+          "Ham:¢10. ¢5 per spin. Porky Pig: + ¢15 per adjacent pork item",
+           "Cheese:¢10. Cheese makes everything better: +¢5 per adjacent item."]
 
 
 

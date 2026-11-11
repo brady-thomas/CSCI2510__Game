@@ -6,6 +6,8 @@ class SpinController extends Component{
         
         this.slotFrames = GameObjects.findGameObjectsWithTag("SlotFrame")
 
+        Globals.spinItems = []
+
         //this.spinGO = []
 
         //console.log(this.slotFrames)
@@ -52,7 +54,7 @@ class SpinController extends Component{
             
             Globals.spinItems.push(this.item)
                     
-            this.itemSpun = instantiate(Globals.toppingsInstantiate[this.item](), this.transform.position.clone())
+            this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
 
             //console.log(this.itemSpun.transform.position)
 

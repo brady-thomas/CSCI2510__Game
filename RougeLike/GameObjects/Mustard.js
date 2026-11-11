@@ -8,5 +8,7 @@ class Mustard extends GameObjects{
 
         this.transform.scale = new Vector2(1.5,2)
 
+        this.addComponent(new ToppingController())
+
     }
 }

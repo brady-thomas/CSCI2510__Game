@@ -13,6 +13,8 @@ class Salami extends GameObjects{
 
         this.addComponent(new Polygon(), {fillStyle: "salmon", points:Assets.square})
 
+        this.addComponent(new ToppingController())
+        
         
 
         this.transform.scale = new Vector2(1.5,2)

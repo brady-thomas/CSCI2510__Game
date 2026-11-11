@@ -9,6 +9,7 @@ class PickController extends Component{
         this.choiceDescription = Globals.currentToppingsDescription[randChoice]
 
         this.choiceDouble = false
+        this.choiceSelected = false
 
         console.log(Globals.day)
 
@@ -17,13 +18,43 @@ class PickController extends Component{
         }
         else{
 
-            //console.log("choice double")
+            console.log("choice double")
             this.choiceDouble = true
             
 
         }
 
+        console.log(Globals.choiceOnScreen)
+
+
+        while (this.choiceDouble){
+            const newRandom = Math.floor(Math.random() * Globals.currentToppings.length)
+            this.choiceString = Globals.currentToppingsString[newRandom]
+            this.choice = Globals.toppingsFactory[this.choiceString]()
+            this.choiceDescription = Globals.currentToppingsDescription[newRandom]
+            if (!Globals.choiceOnScreen.includes(this.choiceString)){
+                Globals.choiceOnScreen.push(this.choiceString)
+                this.choiceDouble = false
+            }
+            
+
+        }
+
         
+
+        this.choice.markForDestroy = false
+
+        this.choiceClick = instantiate(this.choice, this.transform.position.clone())
+
+
+    
+
+        this.choiceDescriptionText = instantiate(new Descriptions(), this.transform.position.clone().minus(new Vector2(50, 500)))
+        this.choiceDescriptionText.getComponent(MultiLineTextLabel).text = this.choiceDescription
+
+        
+
+        //console.log(this.choiceString)
         
 
        
@@ -37,30 +68,7 @@ class PickController extends Component{
 
     fixedUpdate(){
 
-        if (this.choiceDouble){
-            let newRandom = Math.floor(Math.random() * Globals.currentToppings.length)
-            this.choice = Globals.currentToppings[newRandom]
-            this.choiceString = Globals.currentToppingsString[newRandom]
-            this.choiceDescription = Globals.currentToppingsDescription[newRandom]
-            if (!Globals.choiceOnScreen.includes(this.choiceString)){
-                Globals.choiceOnScreen.push(this.choiceString)
-                this.choiceDouble = false
-            }
-            
-
-        }
-
         
-
-
-
-        this.choiceClick = instantiate(this.choice, this.transform.position.clone())
-
-
-    
-
-        this.choiceDescriptionText = instantiate(new Descriptions(), this.transform.position.clone().minus(new Vector2(50, 500)))
-        this.choiceDescriptionText.getComponent(MultiLineTextLabel).text = this.choiceDescription
        
         this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(2.5, 2)
 
@@ -70,16 +78,33 @@ class PickController extends Component{
         if (this.choiceString == "Tomato"){
             this.choiceClick.getComponent(Polygon).transform.scale = new Vector2(2, 2)
         }
+
+
+
+
+        if (this.choiceSelected){
+
+            for (let picker of GameObjects.findGameObjectsWithTag("PickGameObject")){
+                picker.destroy()
+            }
+            for (let desc of GameObjects.findGameObjectsWithTag("Description")){
+                desc.destroy()
+            }
+
+            Globals.choiceOnScreen = []
+
+            SceneManager.loadScene(SlotScene)
+        }
     }
 
     update(){
 
 
         
+        
 
 
-
-    }
+    }   
 
 
     
@@ -109,11 +134,15 @@ class PickController extends Component{
             }
 
             
+
+            
             Globals.money -= Globals.currentToppingsCost[this.choiceString]
             Globals.playerItems[Globals.currentItem] = this.choiceString
             Globals.currentItem++
 
-            SceneManager.loadScene(SlotScene)
+            this.choiceSelected = true
+
+            
             
             //console.log(Globals.playerItems)
         }
