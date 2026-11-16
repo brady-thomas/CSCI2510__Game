@@ -35,5 +35,8 @@ class SlotScene extends Scene{
         this.instantiate(new Coin(), new Vector2(-700,-400))
         this.instantiate(new MoneyTextLabel(), new Vector2(-680, -390))
 
+
+        //this.instantiate(new FlyingText(), new Vector2(0,0))
+
     }
 }

@@ -45,8 +45,6 @@ class Globals{
 
     static unCommonToppingsString = ["Bacon", "Ranch", "Mustard", "Salami"]
 
-    static uncommonToppingCost = 15
-
     static spinItems = []
 
 
@@ -66,7 +64,7 @@ class Globals{
 
     
 
-    static currentToppingsCost = {"Turkey": 10, "Lettuce": 10, "Tomato": 10, "Ham": 10, "Cheese": 10}
+    static currentToppingsCost = {"Turkey": 10, "Lettuce": 10, "Tomato": 10, "Ham": 10, "Cheese": 10, "Bacon": 15, "Ranch": 15, "Mustard": 15, "Salami": 15}
 
     static descriptionsDict = {
         "Turkey": "Turkey:¢10. ¢5 per spin. Turkey Bacon Ranch: If adjacent to bacon AND ranch, gain ¢55.",
@@ -76,10 +74,11 @@ class Globals{
         "Cheese": "Cheese:¢10. ¢0 per spin. Cheese makes everything better: +¢5 per adjacent item.",
         "Bacon": "Bacon:¢15. ¢5 per spin.",
         "Ranch": "Ranch:¢15. ¢5 per spin.",
-        "Mustard": "Mustard:¢15. ¢10 per spin.",
+        "Mustard": "Mustard:¢15. $0 per spin. Mustard on the Beat: 1.5x multiplier for adjacent items.",
         "Salami": "Salami:¢15. ¢2 per spin. Salami Tsunami: +¢2 for every Salami"
         
     }
+
 
 
 

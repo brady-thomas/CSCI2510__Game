@@ -3,7 +3,7 @@ class Ranch extends GameObjects{
         super("Ranch", ["Ranch"], "toppings")
 
         
-        this.addComponent(new Polygon(), {fillStyle: "white", points:Assets.sauce})
+        this.addComponent(new Polygon(), {fillStyle: "antiquewhite", points:Assets.sauce})
 
         this.addComponent(new TextLabel(), {text: "R", fillStyle:"black", font: "20px VT323", textAlign: "center"})
 
