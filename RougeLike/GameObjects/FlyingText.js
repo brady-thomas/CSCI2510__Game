@@ -6,6 +6,6 @@ class FlyingText extends GameObjects{
 
         this.addComponent(new FlyingTextController())
 
-        this.addComponent(new MultiLineTextLabel(), {text: "Flying Text", fillStyle:"black", maxWidth: 200, font:"32px VT323"})
+        this.addComponent(new TextLabel(), {text: "Flying Text", fillStyle:"black", font:"32px VT323"})
     }
 }

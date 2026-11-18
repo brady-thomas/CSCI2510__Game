@@ -3,5 +3,6 @@ class Settings{
 
     static aspectRatio = 16 / 9
     static cameraWidthInWorldSpace = 1500
+    
 
 }

@@ -12,6 +12,8 @@ class Engine{
     static letterBoxingWidth = 0
     static letterBoxingHeight = 0
 
+    static lastTimeStep
+
     static start(nextScene, settings){
         Engine.canvas = document.querySelector("#canv")
         Engine.ctx = Engine.canvas.getContext("2d")
@@ -35,7 +37,17 @@ class Engine{
         
     }
 
-    static gameLoop(){
+    static gameLoop(timestamp){
+    
+            if (!Engine.lastTimeStep){
+                Engine.lastTimeStep = timestamp
+            }
+            else{
+                const diffiInMilliseconds = timestamp - Engine.lastTimeStep
+                const diffInSeconds = diffiInMilliseconds / 1000
+                Time.deltaTime = Math.min(diffInSeconds, 1/60)
+                Engine.lastTimeStep = timestamp
+            }
 
             SceneManager.update()
 

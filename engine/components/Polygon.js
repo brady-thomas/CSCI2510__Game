@@ -2,8 +2,10 @@ class Polygon extends Component {
     fillStyle = "magenta"
     points = []
 
+    alpha = 1
+
     draw(ctx) {
-        let position = this.transform.position
+        //let position = this.transform.position
 
 
         ctx.save()
@@ -12,7 +14,7 @@ class Polygon extends Component {
         // ctx.scale(this.transform.scale.x, this.transform.scale.y)
         // ctx.rotate(this.transform.rotation)
 
-
+        ctx.globalAlpha = this.alpha
 
         ctx.beginPath()
 
@@ -22,6 +24,7 @@ class Polygon extends Component {
         }
 
         ctx.fillStyle = this.fillStyle
+
         ctx.fill()  
 
         ctx.restore()
