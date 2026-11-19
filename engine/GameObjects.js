@@ -71,8 +71,8 @@ class GameObjects{
         }
             else{
 
-                const width = Engine.canvas.width - Engine.letterBoxing.width
-                const height = Engine.canvas.height - Engine.letterBoxing.height
+                const width = Engine.canvas.width - Engine.letterBoxingWidth
+                const height = Engine.canvas.height - Engine.letterBoxingHeight
 
 
                 const upperLeft = new Vector2(width * this.transform.anchorMin.x + this.transform.offsetUpperLeft.x, height * this.transform.anchorMin.y + this.transform.offsetUpperLeft.y)
