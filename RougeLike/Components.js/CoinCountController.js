@@ -5,6 +5,7 @@ class CoinCountController extends Component {
         this.isSpinning = true
         this.spinTimer = 0
         //this.timeCheck = 0
+        
 
         this.hasMustard = false
         this.salamiTsunami = 0
@@ -15,6 +16,7 @@ class CoinCountController extends Component {
 
         this.flyingTextList = []
         this.flyingTextIndex = 0
+        this.flyingTextTimer = 0
 
         //this.madeCoinDict = {}
 
@@ -156,12 +158,12 @@ class CoinCountController extends Component {
                         this.salamiTsunami += 1
                         this.flyingTextList.push("Salami Tsunami! +¢" + this.salamiTsunami * 2)
                         if (mustard == 1.5) {
-                            this.salamiTsunami += 1
+                            this.salamiTsunami += .5
                         }
 
                         //console.log(this.salamiTsunami)
 
-
+                        
                     }
 
                 }
@@ -202,16 +204,19 @@ class CoinCountController extends Component {
 
         }
 
-        if (this.flyingTextIndex != this.flyingTextList.length && this.spinTimer >= 1.2) {
+        if (this.flyingTextIndex < this.flyingTextList.length && this.spinTimer >= 1.2) {
             //console.log(this.spinTimer)
 
-            if (Math.round(this.spinTimer * 100) % 30 == 0) {
+            this.flyingTextTimer -= Time.deltaTime
+
+            if (this.flyingTextTimer <= 0) {
                 console.log("flying text")
                 let text = this.flyingTextList[this.flyingTextIndex]
                 let randomVector2 = new Vector2(Math.random() * 700 - 500, Math.random() * 400 - 100)
                 let flyingText = instantiate(new FlyingText(), randomVector2.clone())
                 flyingText.getComponent(TextLabel).text = text
                 this.flyingTextIndex += 1
+                this.flyingTextTimer += .2
             }
         }
 

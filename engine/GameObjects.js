@@ -68,7 +68,7 @@ class GameObjects{
                 this.transform.position = new Vector2((upperLeft.x + lowerRight.x) / 2, (upperLeft.y + lowerRight.y) / 2)
 
                 this.transform.scale = new Vector2((lowerRight.x - upperLeft.x)/2, (lowerRight.y - upperLeft.y)/2)
-        }
+            }
             else{
 
                 const width = Engine.canvas.width - Engine.letterBoxingWidth
@@ -79,7 +79,7 @@ class GameObjects{
                 const lowerRight = new Vector2(width * this.transform.anchorMax.x + this.transform.offsetLowerRight.x, height * this.transform.anchorMax.y + this.transform.offsetLowerRight.y)
                     
 
-                this.transform.position = new Vector2((upperLeft.x + lowerRight.x) / 2, (upperLeft.y + lowerRight.y) / 2)
+                this.transform.position = new Vector2(Engine.letterBoxingWidth/2 + (upperLeft.x + lowerRight.x) / 2, Engine.letterBoxingHeight/2 + (upperLeft.y + lowerRight.y) / 2)
 
                 this.transform.scale = new Vector2((lowerRight.x - upperLeft.x)/2, (lowerRight.y - upperLeft.y)/2)
             }
