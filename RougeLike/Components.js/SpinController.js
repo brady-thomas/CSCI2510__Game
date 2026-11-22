@@ -8,6 +8,12 @@ class SpinController extends Component{
 
         Globals.spinItems = []
 
+        for (let item in Globals.playerItems){
+                Globals.itemCheckDict[item] = 0
+
+            }
+
+
         //this.spinGO = []
 
         //console.log(this.slotFrames)
@@ -51,10 +57,38 @@ class SpinController extends Component{
             this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
             
             //console.log(this.item)
+
+            if (this.item == "Empty"){
+                this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
+                Globals.spinItems.push(this.item)
+            }
+            else{
+                if (Globals.itemCheckDict[this.item]){
+                    if(Globals.itemCheckDict[this.item] < Globals.inventoryDict[this.item]){
+                        Globals.itemCheckDict[this.item] += 1
+                        Globals.spinItems.push(this.item)
+                        this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
+
+                    }
+                    else{
+                        this.itemSpun = instantiate(Globals.toppingsFactory["Empty"](), this.transform.position.clone())
+                        Globals.spinItems.push("Empty")
+                    }
+                }
+                else{
+                    Globals.itemCheckDict[this.item] = 1
+                    Globals.spinItems.push(this.item)
+                    this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
+                }
+        }
             
-            Globals.spinItems.push(this.item)
+            
+
+
+
+
                     
-            this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
+            
 
             //console.log(this.itemSpun.transform.position)
 

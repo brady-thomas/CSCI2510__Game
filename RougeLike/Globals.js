@@ -27,7 +27,7 @@ class Globals{
 
     static inventoryDict = {}
 
-
+    static itemCheckDict = {}
 
 
     static currentItem = 0
