@@ -22,7 +22,7 @@ class ContinueButtonController extends Component{
         if (Input.mouseButtonsDown.includes(0)) {
             
             Globals.day++
-
+            
             for (let topping of GameObjects.findGameObjectsByType(ToppingController)){
                 topping.destroy()
             }

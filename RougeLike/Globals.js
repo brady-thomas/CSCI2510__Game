@@ -12,7 +12,7 @@ class Globals{
         GastaOne, GastaTwo
     ]
 
-    static gastaFees = [200, 750, 2000, 5000, 15000, 50000]
+    static gastaFees = [150, 350, 800, 2000, 5000, 10000]
 
 
     static money = 100

@@ -3,10 +3,10 @@ class SpinController extends Component{
     start(){
         this.spinTimer = 1
         this.isSpinning = true
-        
+        Globals.spinItems = []
         this.slotFrames = GameObjects.findGameObjectsWithTag("SlotFrame")
 
-        Globals.spinItems = []
+        
 
         for (let item in Globals.playerItems){
                 Globals.itemCheckDict[item] = 0
@@ -64,23 +64,25 @@ class SpinController extends Component{
             }
             else{
                 if (Globals.itemCheckDict[this.item]){
+                    while(!(Globals.itemCheckDict[this.item] < Globals.inventoryDict[this.item])){
+                            this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
+                        
+                    }
+                    
                     if(Globals.itemCheckDict[this.item] < Globals.inventoryDict[this.item]){
                         Globals.itemCheckDict[this.item] += 1
                         Globals.spinItems.push(this.item)
                         this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
 
                     }
-                    else{
-                        this.itemSpun = instantiate(Globals.toppingsFactory["Empty"](), this.transform.position.clone())
-                        Globals.spinItems.push("Empty")
-                    }
+                        
                 }
                 else{
                     Globals.itemCheckDict[this.item] = 1
                     Globals.spinItems.push(this.item)
                     this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
                 }
-        }
+        } 
             
             
 

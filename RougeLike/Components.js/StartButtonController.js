@@ -14,7 +14,7 @@ class StartButtonController extends Component{
         if (Input.mouseButtonsDown.includes(0)) {
             
             let i = 0
-            while (i < 2) {
+            while (i < 4) {
                 let random = Math.floor(Math.random() * Globals.currentToppings.length)
                 Globals.playerItems.push(Globals.currentToppingsString[random])
 
