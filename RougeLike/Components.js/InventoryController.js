@@ -4,7 +4,9 @@ class InventoryController extends Component{
 
         this.inventoryDict = {}
 
+        
         for (let item of Globals.playerItems) {
+            //console.log(typeof item)
             if (item == "Empty")
                 continue
                 
@@ -16,8 +18,9 @@ class InventoryController extends Component{
         }
 
         for (let item in this.inventoryDict) {
+            //console.log(item)
             if (this.inventoryDict[item] != 0) {
-                Globals.inventoryDict[item] = this.inventoryDict[item]
+                Globals.inventoryDict[String(item)] = this.inventoryDict[item]
             }
         }
 
@@ -33,9 +36,11 @@ class InventoryController extends Component{
         for (let item in this.inventoryDict) {
             if (this.inventoryDict[item] != 0) {
                 inventoryText += item + ": " + this.inventoryDict[item] + " "
-            }
+            }   
         }
         
+        //console.log(Globals.inventoryDict)
+
 
         this.gameObjects.getComponent(MultiLineTextLabel).text = inventoryText
 

@@ -22,6 +22,10 @@ class PickOne extends Scene{
 
 
         this.instantiate(new InventoryGameObject(), new Vector2(-700,-100))
+
+        this.instantiate(new PauseButton(), new Vector2(650, -350))
+        this.instantiate(new PauseSymbol(), new Vector2(655, -350))
+        this.instantiate(new PauseSymbol(), new Vector2(645, -350))
         
     }
 }

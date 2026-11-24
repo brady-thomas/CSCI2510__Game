@@ -14,6 +14,10 @@ class GastaTwo extends Scene{
         
         this.instantiate(new Coin(), new Vector2(-700,-400))
         this.instantiate(new MoneyTextLabel(), new Vector2(-680, -390))
+
+        this.instantiate(new PauseButton(), new Vector2(650, -350))
+        this.instantiate(new PauseSymbol(), new Vector2(655, -350))
+        this.instantiate(new PauseSymbol(), new Vector2(645, -350))
     }
 
 }

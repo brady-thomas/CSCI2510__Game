@@ -4,15 +4,26 @@ class SpinController extends Component{
         this.spinTimer = 1
         this.isSpinning = true
         Globals.spinItems = []
+
+        this.itemCheckDict = Globals.inventoryDict
+        //console.log(this.itemCheckDict)
+        //console.log(Globals.inventoryDict)
+        
+        
         this.slotFrames = GameObjects.findGameObjectsWithTag("SlotFrame")
 
         
 
-        for (let item in Globals.playerItems){
-                Globals.itemCheckDict[item] = 0
 
-            }
+        
 
+        // for (let item in Globals.playerItems){
+        //         Globals.itemCheckDict[Globals.playerItems[item]] = 0
+
+
+        //     }
+        
+        
 
         //this.spinGO = []
 
@@ -56,6 +67,15 @@ class SpinController extends Component{
                 
             this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
             
+            
+            
+            while(this.item != "Empty" && this.itemCheckDict[this.item] <= 0){
+                //console.log("spun out of bounds " + this.item + this.itemCheckDict[this.item])
+                this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
+            }
+
+
+
             //console.log(this.item)
 
             if (this.item == "Empty"){
@@ -63,26 +83,40 @@ class SpinController extends Component{
                 Globals.spinItems.push(this.item)
             }
             else{
-                if (Globals.itemCheckDict[this.item]){
-                    while(!(Globals.itemCheckDict[this.item] < Globals.inventoryDict[this.item])){
-                            this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
+                    // while(!(Globals.itemCheckDict[this.item] < Globals.inventoryDict[this.item])){
                         
-                    }
+                    //     this.item = Globals.playerItems[Math.floor(Math.random() * Globals.playerItems.length)]
+                        
+                
+                    // }
                     
-                    if(Globals.itemCheckDict[this.item] < Globals.inventoryDict[this.item]){
-                        Globals.itemCheckDict[this.item] += 1
-                        Globals.spinItems.push(this.item)
-                        this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
+                if(this.itemCheckDict[this.item] > 0){
+                    this.itemCheckDict[this.item] -= 1
+                    
 
-                    }
+                }
+
+                else{  
+
+
+                    //console.log(Globals.itemCheckDict)
+
+                    // console.log(this.item)
+                    // this.item = "Mustard"
+                    
+
                         
                 }
-                else{
-                    Globals.itemCheckDict[this.item] = 1
-                    Globals.spinItems.push(this.item)
-                    this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
-                }
-        } 
+                        
+            
+
+
+                Globals.spinItems.push(this.item)
+                this.itemSpun = instantiate(Globals.toppingsFactory[this.item](), this.transform.position.clone())
+
+                //this.itemNum = this.itemCheckDict[this.item]
+            } 
+            
             
             
 

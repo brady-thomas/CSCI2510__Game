@@ -17,6 +17,7 @@ class StartButtonController extends Component{
             while (i < 4) {
                 let random = Math.floor(Math.random() * Globals.currentToppings.length)
                 Globals.playerItems.push(Globals.currentToppingsString[random])
+                //console.log(Globals.playerItems)
 
                 i++
             }
