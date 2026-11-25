@@ -1,4 +1,8 @@
 class StartButtonController extends Component{
+    
+    start(){
+        Globals.boot()
+    }
 
 
     fixedUpdate(){

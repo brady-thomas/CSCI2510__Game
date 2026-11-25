@@ -5,12 +5,15 @@ class SpinController extends Component{
         this.isSpinning = true
         Globals.spinItems = []
 
+
+        this.spinChance
+
         this.itemCheckDict = Globals.inventoryDict
         //console.log(this.itemCheckDict)
         //console.log(Globals.inventoryDict)
         
         
-        this.slotFrames = GameObjects.findGameObjectsWithTag("SlotFrame")
+        //this.slotFrames = GameObjects.findGameObjectsWithTag("SlotFrame")
 
         
 
@@ -35,19 +38,24 @@ class SpinController extends Component{
 
     update(){
 
-        this.spinTimer -= Time.deltaTime
+        
 
         if (this.isSpinning){
 
+            this.spinTimer -= Time.deltaTime  
+            if (this.randomSpin)
+                this.randomSpin.destroy()
+            //this.slot = this.slotFrames[Math.floor(Math.random() * this.slotFrames.length)]
+            if (Math.random() > .2){
+                this.randomNum = Math.floor(Math.random() * Globals.currentToppingsString.length)
+                //console.log(Globals.currentToppingsString[this.randomNum])
+                this.randomSpin = instantiate(Globals.toppingsFactory[Globals.currentToppingsString[this.randomNum]](), this.transform.position.clone())
             
+            }
 
-            this.slot = this.slotFrames[Math.floor(Math.random() * this.slotFrames.length)]
-                
-            this.randomNum = Math.floor(Math.random() * Globals.currentToppings.length)
-            this.randomSpin = instantiate(Globals.currentToppings[this.randomNum], this.slot.transform.position.clone())
-            
-            
         }
+
+        //this.randomSpin.destroy()
 
         
 
